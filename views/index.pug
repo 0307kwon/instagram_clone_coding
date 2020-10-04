@@ -14,3 +14,5 @@ block content
         a(href=`/posts/delete?id=${post_name}`) delete
   p Welcome to #{title}
   ul!=contents_list 
+  -if(alert===true)
+    script alert("작성되었습니다.");
