@@ -2,4 +2,16 @@ extends layout
 
 block content
   h1= title
+  div
+    h3(style="display:inline; margin-right:5px") 
+        a(href=`/`) back
+    -if(_create===true)
+      h3(style="display:inline; margin-right:5px") 
+        a(href=`/posts/create`) create
+    -if(_update===true)
+      h3(style="display:inline; margin-right:5px")
+        a(href=`/posts/update?id=${post_name}`) update
+    -if(_delete===true)
+      h3(style="display:inline; margin-right:5px")
+        a(href=`/posts/delete?id=${post_name}`) delete
   p= contents

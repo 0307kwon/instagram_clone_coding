@@ -3,11 +3,11 @@ extends layout
 block content
     h1=title
     h3(style="display:inline; margin-right:5px") 
-        a(href=`javascript:history.back()`) back
+        a(href=`/`) back
     p post를 생성합니다.
     form(action="/posts/process_create" method="POST")
         p
             input(name="title" placeholder="제목을 입력해주세요.")
         p
-            textarea(name="contents", cols="30", rows="10")
+            textarea(name="contents" cols="30" rows="10")
         button(type="submit") 작성

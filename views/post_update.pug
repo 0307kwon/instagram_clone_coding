@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1=title
+    h3(style="display:inline; margin-right:5px") 
+        a(href=`/`) back
+    p post를 수정합니다.
+    form(action=`/posts/process_update/${title_value}` method="POST")
+        p
+            input(name="title" value=title_value placeholder="제목을 입력해주세요.")
+        p
+            textarea(name="contents" cols="30" rows="10")=contents_value
+        button(type="submit") 수정
