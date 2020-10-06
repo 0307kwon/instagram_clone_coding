@@ -12,11 +12,21 @@ const storage = multer.diskStorage({
       cb(null, './public/images');
     },
     filename: function (req, file, cb) {
-        if(req.post === undefined || req.post === "" ){ // 이전 post작성에 사진을 저장하지 않았으면
+        const revision_title = req.body.title;
+        const contents = req.body.contents;
+        req.post_changed = {
+            title:revision_title,
+            contents:contents,
+            time:new Date(),
+        };
+
+        if(req.post.filename_image === "" ){ // 이전 post작성에 사진을 저장하지 않았으면
             const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
             const extention = path.extname(file.originalname);
-            cb(null, file.fieldname + '-' + uniqueSuffix+extention);
-        }else{
+            const filename_image = file.fieldname + '-' + uniqueSuffix+extention;
+            cb(null, filename_image);
+            req.post_changed.filename_image = filename_image;
+        }else{ //
             cb(null, req.post.filename_image);
         }
     }
@@ -65,32 +75,9 @@ router.use("/process_update/:post_id",(req,res,next)=>{
 });
 router.post("/process_update/:post_id",upload.single("uploaded_file"),(req,res)=>{
     const post_id = req.params.post_id;
-    const revision_title = req.body.title;
-    const contents = req.body.contents;
-    console.log(contents);
-
-    const post_changed = {
-        title:revision_title,
-        contents:contents,
-        time:new Date(),
-    };
-
-    // 새로운 이미지 파일로 변경.
-    if(req.file !== undefined){ 
-        /*
-        const upload_revision = multer({storage:multer.diskStorage({
-            destination: function (req, file, cb) {
-                cb(null, './public/images');
-            },
-            filename: function (req, file, cb) {
-                cb(null, post.filename_image);
-            }
-        })});
-        upload_revision.single("uploaded_file")
-        */
-    }
+ 
     //db 업데이트
-    mydb.Post.updateOne({_id:post_id,},post_changed,(err,post)=>{
+    mydb.Post.updateOne({_id:post_id,},req.post_changed,(err,post)=>{
         if(err) throw err;
         const page = `
         <script>alert("수정되었습니다.")</script>
