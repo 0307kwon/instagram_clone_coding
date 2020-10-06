@@ -10,8 +10,8 @@ block content
         a(href=`/posts/create`) create
     -if(_update===true)
       h3(style="display:inline; margin-right:5px")
-        a(href=`/posts/update?id=${post_name}`) update
+        a(href=`/posts/update/${post_id}`) update
     -if(_delete===true)
       h3(style="display:inline; margin-right:5px")
-        a(href=`/posts/delete?id=${post_name}`) delete
+        a(href=`/posts/delete/${post_id}`) delete
   p= contents

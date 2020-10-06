@@ -1,14 +1,26 @@
+const { DH_UNABLE_TO_CHECK_GENERATOR } = require("constants");
 const { resolveSoa } = require("dns");
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const { title } = require("process");
 
+//사용자 모듈
+const mydb = require("./post_db.js");
+//
+
 router.post("/process_create", (req,res)=>{
     const title = req.body.title;
     contents = req.body.contents;
 
-    fs.writeFile(`./posts/${title}`,contents,(err)=>{
+    const newPost = new mydb.Post({
+        title:title,
+        contents:contents,
+        image_url:"",
+        time:new Date(),
+    })
+
+    newPost.save().then((value)=>{
         const page = `
         <script>alert("작성되었습니다.")</script>
         <meta http-equiv="refresh" content="0; url=/"></meta>
@@ -17,19 +29,25 @@ router.post("/process_create", (req,res)=>{
     });
 })
 
-router.post("/process_update/:origin_title",(req,res)=>{
-    const origin_title = req.params.origin_title;
+router.post("/process_update/:post_id",(req,res)=>{
+    const post_id = req.params.post_id;
+
     const revision_title = req.body.title;
     const contents = req.body.contents;
-    fs.rename(`./posts/${origin_title}`,`./posts/${revision_title}`,(err)=>{
+
+    const post_changed = {
+        title:revision_title,
+        contents:contents,
+        time:new Date(),
+    };
+
+    mydb.Post.updateOne({_id:post_id,},post_changed,(err,post)=>{
         if(err) throw err;
-        fs.writeFile(`./posts/${revision_title}`,contents,(err)=>{
-            const page = `
-            <script>alert("수정되었습니다.")</script>
-            <meta http-equiv="refresh" content="0; url=/posts/${revision_title}"></meta>
-            `;
-            res.send(page);
-        });
+        const page = `
+        <script>alert("수정되었습니다.")</script>
+        <meta http-equiv="refresh" content="0; url=/posts/${post_id}"></meta>
+        `;
+        res.send(page);
     })
 });
 
@@ -39,9 +57,18 @@ router.get("/create",(req,res)=> {
     });
 })
 
-router.get("/delete", (req,res)=>{
-    const id = req.query.id;
-    console.log(id);
+router.get("/delete/:post_id", (req,res)=>{
+    const id = req.params.post_id;
+    mydb.Post.deleteOne({_id:id,},(err,post)=>{
+        if(err) throw err;
+        const page = `
+        <script>alert("삭제되었습니다.")</script>
+        <meta http-equiv="refresh" content="0; url=/"></meta>
+        `;
+        res.send(page);
+    });
+
+    /*
     fs.unlink(`./posts/${id}`, (err)=>{
         if(err) throw err;
         const page = `
@@ -50,10 +77,23 @@ router.get("/delete", (req,res)=>{
         `;
         res.send(page);
     });
+    */
 });
 
-router.get("/update", (req,res)=>{
-    const id = req.query.id;
+router.get("/update/:post_id", (req,res)=>{
+    const id = req.params.post_id;
+
+    mydb.Post.findOne({_id:id,},(err,post)=>{
+        if(err) throw err;
+        res.render("post_update",{
+            title:"Post 수정",
+            post_id:id,
+            title_value:post.title,
+            contents_value:post.contents,
+        });
+    });
+
+    /*
     fs.readFile(`./posts/${id}`, "utf8" , (err,data) =>{
         if(err) throw err;
         const contents_value = data;
@@ -63,20 +103,23 @@ router.get("/update", (req,res)=>{
             contents_value:contents_value,
         });
     });
+    */
 });
 
-router.get("/:postId",(req,res)=>{
-    const postId = req.params.postId;
-    fs.readFile(`./posts/${postId}`,"utf8",(err,data) =>{
+router.get("/:post_id",(req,res)=>{
+    const post_id = req.params.post_id;
+    mydb.Post.findOne({_id:post_id,},(err,post)=>{
+        if(err) throw err;
         res.render("post",{
-            title: postId,
-            post_name: postId,
-            contents: data,
+            title: post.title,
+            post_id: post._id,
+            contents: post.contents,
             _delete: true,
             _update: true,
         })
-    })
+    });
 })
 
 
 module.exports = router;
+
