@@ -5,9 +5,11 @@ block content
     h3(style="display:inline; margin-right:5px") 
         a(href=`/`) back
     p post를 생성합니다.
-    form(action="/posts/process_create" method="POST")
+    form(action="/posts/process_create" method="POST" enctype="multipart/form-data")
         p
-            input(name="title" placeholder="제목을 입력해주세요.")
+            input(type="text" name="title" placeholder="제목을 입력해주세요.")
         p
             textarea(name="contents" cols="30" rows="10")
+        p
+            input(type="file" name="uploaded_file") 
         button(type="submit") 작성

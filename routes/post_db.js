@@ -12,7 +12,7 @@ db.once(`open`, ()=>{
 const PostSchema = mongoose.Schema({
     title:String,
     contents:String,
-    image_url:String,
+    filename_image:String,
     time:Date,
 });
 const Post = mongoose.model("post",PostSchema);
