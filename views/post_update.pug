@@ -5,7 +5,7 @@ block content
     h3(style="display:inline; margin-right:5px") 
         a(href=`/`) back
     p post를 수정합니다.
-    form(action=`/posts/process_update/${post_id}` method="POST" enctype="multipart/form-data")
+    form(action=`/posts/update/process/${post_id}` method="POST" enctype="multipart/form-data")
         p
             input(type="text" name="title" value=title_value placeholder="제목을 입력해주세요.")
         p

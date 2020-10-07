@@ -1,8 +1,0 @@
-form(action=`/posts/process_update/${post_id}` method="POST" enctype="multipart/form-data")
-        p
-            input(type="text" name="title" value=title_value placeholder="제목을 입력해주세요.")
-        p
-            textarea(name="contents" cols="30" rows="10")=contents_value
-        p
-            input(type="file" name="uploaded_file") 
-        button(type="submit") 수정

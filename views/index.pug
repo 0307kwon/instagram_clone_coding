@@ -13,6 +13,9 @@ block content
       h3(style="display:inline; margin-right:5px")
         a(href=`/posts/delete/${post_id}`) delete
   p Welcome to #{title}
-  ul!=contents_list 
-  -if(alert===true)
-    script alert("작성되었습니다.");
+  div
+    -for(let i=0; i<posts.length; i++)
+      article
+        h2
+          a(href=posts[i].link)=posts[i].title
+        p=posts[i].contents

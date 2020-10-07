@@ -5,7 +5,7 @@ block content
     h3(style="display:inline; margin-right:5px") 
         a(href=`/`) back
     p post를 생성합니다.
-    form(action="/posts/process_create" method="POST" enctype="multipart/form-data")
+    form(action="/posts/create/process" method="POST" enctype="multipart/form-data")
         p
             input(type="text" name="title" placeholder="제목을 입력해주세요.")
         p
