@@ -7,7 +7,7 @@ block content
     p post를 수정합니다.
     form(action=`/posts/update/process/${post_id}` method="POST" enctype="multipart/form-data")
         p
-            input(type="text" name="title" value=account_name placeholder="제목을 입력해주세요.")
+            input(type="text" name="account_name" value=account_name placeholder="제목을 입력해주세요.")
         p
             textarea(name="contents" cols="30" rows="10")=contents
         p

@@ -7,10 +7,7 @@ a {
   color: black;
 }
 
-.post_header{
-  padding: 16px;
-  border-bottom:1px solid rgba(var(--b6a,219,219,219),1);
-}
+
 
 .border{
   border-radius: 3px;
@@ -77,6 +74,7 @@ main{
 
 /*스토리*/
 .story{
+  height: 118px;
   width: inherit;
   background-color: white;
   border-radius: 3px;
@@ -84,6 +82,31 @@ main{
   margin-bottom: 40px;
 }
 
+.story_sub{
+  padding:10px 0;
+}
 .story img{
-  height: 100px;
+  height: 95px;
+}
+
+/*article 헤더 */
+
+.post_header{
+  height: 60px;
+  margin-top: 0px;
+  background-color: red;
+  border-bottom:1px solid rgba(var(--b6a,219,219,219),1);
+}
+
+.header_div{
+
+}
+
+.post_header ul li{
+  list-style: none;
+  float: left;
+}
+
+.profile_img{
+  width:40px;
 }
