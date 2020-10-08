@@ -2,8 +2,33 @@ extends layout
 
 block content
   nav(class="nav")
-    h1= title
     div
+      ul
+        li
+          img(src="/static_images/logo_img.png" class="logo_img")
+        li(class="home_nav")
+          img(src="/static_images/home_img.png" class="home_img")
+
+
+  main
+    section(class="index_section")
+      div(class="story")
+        img(src="/static_images/story_img.png")
+      div(class="post_div")
+        -for(let i=0; i<posts.length; i++)
+          article(class="border")
+            header(class="post_header")
+              a(href=posts[i].link)=posts[i].account_name
+            div
+              -if(posts[i].filename_image !== "")
+                div
+                  img(src=`/post_images/${posts[i].filename_image}` width="600px")
+              div(class="letter_div")
+                p=posts[i].contents
+
+
+
+//-
       -if(_create===true)
         h3(style="display:inline; margin-right:5px") 
           a(href=`/posts/create`) create
@@ -14,16 +39,3 @@ block content
         h3(style="display:inline; margin-right:5px")
           a(href=`/posts/delete/${post_id}`) delete
     p Welcome to #{title}
-  main(class="index_main")
-    div(class="post_div")
-      -for(let i=0; i<posts.length; i++)
-        article(class="border")
-          header(class="post_header")
-            a(href=posts[i].link)=posts[i].title
-          div
-            -if(posts[i].filename_image !== "")
-              div
-                img(src=`/post_images/${posts[i].filename_image}` width="500px")
-            div(class="letter_div")
-              p=posts[i].contents
-

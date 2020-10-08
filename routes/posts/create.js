@@ -9,7 +9,7 @@ const post_db = require("../../custom_module/post_db");
 
 
 router.post("/process", upload.single("uploaded_file"),(req,res)=>{
-    const title = req.body.title;
+    const account_name = req.body.account_name;
     const contents = req.body.contents;
 
     let filename_image = "";
@@ -17,7 +17,7 @@ router.post("/process", upload.single("uploaded_file"),(req,res)=>{
         filename_image = req.file.filename;
     }
     const newPost = new post_db.Post({
-        title:title,
+        account_name:account_name,
         contents:contents,
         filename_image:filename_image,
         time:new Date(),

@@ -11,13 +11,13 @@ const ReadByPostId = require("../../custom_module/readByPostId");
 
 router.get("/:post_id", ReadByPostId,(req,res)=>{
     const id = req.params.post_id;
-    const title = req.post.title;
+    const account_name = req.post.account_name;
     const contents = req.post.contents;
     res.render("post_update",{
         title:"Post 수정",
         post_id:id,
-        title_value:title,
-        contents_value:contents,
+        account_name:account_name,
+        contents:contents,
     });
 });
 

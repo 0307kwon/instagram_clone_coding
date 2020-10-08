@@ -12,10 +12,10 @@ const myMulterStorage = multer.diskStorage({
             const filename_image = file.fieldname + '-' + uniqueSuffix+extention;
             cb(null, filename_image);
         }else{ // update의 경우
-            const revision_title = req.body.title;
+            const revision_account_name = req.body.account_name;
             const contents = req.body.contents;
             req.post_changed = {
-                title:revision_title,
+                account_name:revision_account_name,
                 contents:contents,
                 time:new Date(),
             };
