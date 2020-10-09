@@ -7,6 +7,10 @@ a {
   color: black;
 }
 
+ul{
+  margin:0px;
+  padding:0px;
+}
 
 
 .border{
@@ -93,14 +97,10 @@ main{
 
 .post_header{
   height: 60px;
-  margin-top: 0px;
   background-color: red;
   border-bottom:1px solid rgba(var(--b6a,219,219,219),1);
 }
 
-.header_div{
-
-}
 
 .post_header ul li{
   list-style: none;

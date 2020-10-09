@@ -8,8 +8,6 @@ block content
           img(src="/static_images/logo_img.png" class="logo_img")
         li(class="home_nav")
           img(src="/static_images/home_img.png" class="home_img")
-
-
   main
     section(class="index_section")
       div(class="story")
@@ -19,13 +17,11 @@ block content
         -for(let i=0; i<posts.length; i++)
           article(class="border")
             header(class="post_header")
-              div(class="header_div")
-                ul
-                  li
-                    img(src="/static_images/profile_img.png" class="profile_img")
-                ul
-                  li
-                    a(href=posts[i].link)=posts[i].account_name
+              ul  
+                li
+                  img(src="/static_images/profile_img.png" class="profile_img")
+                li
+                  a(href=posts[i].link)=posts[i].account_name
             div
               -if(posts[i].filename_image !== "")
                 div
