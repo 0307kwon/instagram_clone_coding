@@ -101,6 +101,11 @@ main{
   border-bottom:1px solid rgba(var(--b6a,219,219,219),1);
 }
 
+.post_header div{
+  height: 27px;
+  padding: 16px;
+}
+
 
 .post_header ul li{
   list-style: none;
