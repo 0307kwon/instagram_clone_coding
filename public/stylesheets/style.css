@@ -95,23 +95,23 @@ main{
 
 /*article 헤더 */
 
-.post_header{
+.ph{
   height: 60px;
-  background-color: red;
   border-bottom:1px solid rgba(var(--b6a,219,219,219),1);
 }
 
-.post_header div{
+.phd{
   height: 27px;
-  padding: 16px;
+  padding: 16px 0px;
 }
 
 
-.post_header ul li{
-  list-style: none;
-  float: left;
-}
 
 .profile_img{
-  width:40px;
+  width:30px;
+}
+
+.phdd{
+  float: left;
+  margin-left: 10px;
 }
