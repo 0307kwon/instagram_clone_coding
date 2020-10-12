@@ -19,12 +19,16 @@ block content
             header(class="ph")
               div(class="phd")  
                 div(class="phdd")
-                  img(src="/static_images/profile_img.png" class="profile_img")
+                  div(class="phddd")
+                    img(src="/static_images/profile_img.png" class="profile_img")
                 div(class="phdd")
-                  div 
-                    span #경북대
-                  div
-                    a(href=posts[i].link)=posts[i].account_name
+                  div(class="phddd")
+                    div 
+                      span #경북대
+                    div
+                      a(href=posts[i].link)=posts[i].account_name
+                    div
+                      span Daegu
             div
               -if(posts[i].filename_image !== "")
                 div

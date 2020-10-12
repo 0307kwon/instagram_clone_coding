@@ -112,6 +112,11 @@ main{
 }
 
 .phdd{
+  position: relative;
   float: left;
-  margin-left: 10px;
+  margin-left: 20px;
+}
+
+.phddd{
+  position: absolute;
 }
