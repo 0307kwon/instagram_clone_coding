@@ -113,10 +113,9 @@ main{
 
 .phdd{
   position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   float: left;
   margin-left: 20px;
 }
 
-.phddd{
-  position: absolute;
-}
