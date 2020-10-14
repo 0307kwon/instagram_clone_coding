@@ -13,14 +13,14 @@ ul{
 }
 
 
-.border{
+.post{
   border-radius: 3px;
   border:1px solid rgba(var(--b6a,219,219,219),1);
   margin-bottom: 40px;
   background-color: white;
 }
 
-.post_div{
+.post{
   width:inherit;
 }
 
@@ -68,7 +68,7 @@ ul{
   z-index: 0;
   padding-top: 50px;
   margin:0 auto;
-  width: 600px;
+  width: 603px;
 }
 
 main{
@@ -119,3 +119,7 @@ main{
   margin-left: 20px;
 }
 
+.ci{
+  position: relative;
+  top: -10px;
+}
