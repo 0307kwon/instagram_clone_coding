@@ -1,0 +1,19 @@
+.article__imgdiv{
+    position: absolute;
+    top: 10%;
+    left:20%;
+}
+
+.article__imgdiv__img{
+    width: 400px;
+}
+
+.article{
+    margin-top: 30px;
+}
+
+.article__content{  
+    width: 350px;
+    height: 730px;
+    background-color: khaki;
+}

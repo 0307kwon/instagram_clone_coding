@@ -1,2 +1,11 @@
-block contents
-  span 안녕하세요.
+extends layout
+
+block additional_css
+  link(rel='stylesheet', href='/stylesheets/index.css')
+
+block content
+  article(class="article")
+    div(class="article__imgdiv")
+      img(src="/static_images/login/ad.png" class="article__imgdiv__img")
+    div(class="article__content")
+      
