@@ -6,9 +6,8 @@
 
 .article__imgdiv{
     position: absolute;
-    width: 400px;
-    top: 10%;   
-    left:100px;
+    width: 400px; 
+    left:80px;
 }
 
 .article__imgdiv__img{
@@ -26,8 +25,74 @@
 
 .article__content{  
     position: relative;
-    left:500px;
+    left:480px;
     width: 350px;
     height: 730px;
-    background-color: khaki;
+    margin-top: 30px;
 }
+
+.article__content__top{
+    position: relative;
+    width: 350px;
+    height: 377px;
+    border-radius: 3px;
+    border: 1px solid rgba(var(--b6a,219,219,219),1);
+    background-color: white;
+    padding: 10px 0px;
+}
+
+.article__content__top__div{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+}
+
+.article__content__top__div__div{
+    position: relative;
+    width: inherit;
+    height: 100px;
+}
+
+.article__content__top__div__loginForm{
+    position: relative;
+    width:inherit;
+    height: 300px;
+}
+
+.article__content__top__div__div__img{
+    width: 175px;
+    margin: 22.82px 87.5px;
+}
+
+
+
+.article__content__bottom{
+    position: relative;
+    margin-top: 10px;
+}
+
+.article__content__bottom__div{
+    position: absolute;
+    width: 350px;
+    height: 50px;
+    border-radius: 3px;
+    border: 1px solid rgba(var(--b6a,219,219,219),1);
+    background-color: white;
+    padding: 10px 0px;
+}
+
+.article__content__bottom__div div{
+    position: absolute;
+    width: 220px;
+    height: 50px;
+    left: 50%;
+    margin-left:-100px;
+}
+
+.article__content__bottom__div div p{
+    display: block;
+    margin: 15px 15px;
+    width: 190px;
+    text-align: center;
+}
+

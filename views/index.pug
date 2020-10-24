@@ -6,8 +6,24 @@ block additional_css
 block content
   main(class="main")
     article(class="article")
-      div(class="article__div")
-        div(class="article__imgdiv")
-          img(src="/static_images/login/ad.png" class="article__imgdiv__img")
-        div(class="article__content")
+      div(class="article__imgdiv")
+        img(src="/static_images/login/ad.png" class="article__imgdiv__img")
+      div(class="article__content")
+        div(class="article__content__top")
+          div(class="article__content__top__div")
+            div(class="article__content__top__div__div")
+              img(src="/static_images/logo_img.png" class="article__content__top__div__div__img")
+            div(class="article__content__top__div__loginForm")
+              form(action="/", method="POST")
+                p 
+                  input(type="text" name="id")
+                p
+                  input(type="password" name="pwd") 
+                p
+                  input(type="submit" disabled)
+        div(class="article__content__bottom")
+          div(class="article__content__bottom__div")
+            div
+              p 계정이 없으신가요?
+                a(href="/")  가입하기 
 
