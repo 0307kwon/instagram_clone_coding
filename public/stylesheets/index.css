@@ -1,7 +1,14 @@
+.main{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
 .article__imgdiv{
     position: absolute;
-    top: 10%;
-    left:20%;
+    width: 400px;
+    top: 10%;   
+    left:100px;
 }
 
 .article__imgdiv__img{
@@ -9,10 +16,17 @@
 }
 
 .article{
+    position: absolute;
+    width: 900px;
+    height: 100%;
+    left: 50%;
+    margin-left: -450px;
     margin-top: 30px;
 }
 
 .article__content{  
+    position: relative;
+    left:500px;
     width: 350px;
     height: 730px;
     background-color: khaki;
