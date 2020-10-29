@@ -135,4 +135,9 @@
     margin-top: 10px;
     margin-left: 41px;
     width: 258px;
+    height: 29.6px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: rgba(var(--d69,0,149,246),1);
 }
