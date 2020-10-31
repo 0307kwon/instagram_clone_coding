@@ -1,0 +1,16 @@
+extends layout
+
+block additional_css
+  link(rel='stylesheet', href='/stylesheets/signup.css')
+
+block content
+    form(action="/" method="POST")
+        p
+            input(type="text" name="email")
+        p
+            input(type="text" name="name")
+        p
+            input(type="text" name="nickname")
+        p
+            input(type="password" name="pwd")
+    

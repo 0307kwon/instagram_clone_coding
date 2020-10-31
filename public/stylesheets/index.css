@@ -68,6 +68,8 @@
 
 .article__content__bottom{
     position: relative;
+    height: 72px;
+    width: 352px;
     margin-top: 10px;
 }
 
@@ -214,4 +216,31 @@
     text-decoration: none;
     color: #0984e3;
     font-weight: 600;
+}
+
+.article__app-download{
+    position: relative;
+    width: 352px;
+    height: 80px;
+    margin-top: 10px;
+}
+
+.article__app-download__text{
+    position: relative;
+    margin: 0px;
+    text-align: center;
+}
+
+.article__app-download__img-div{
+    position: relative;
+    margin-top: 12px;
+    width: 352px;
+    height: 42px;
+}
+
+.article__app-download__img-div__img{
+    position: absolute;
+    left: 50%;
+    margin-left: -125px;
+    width: 250px;
 }
