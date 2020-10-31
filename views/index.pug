@@ -17,10 +17,14 @@ block content
               form(action="/login/signin", method="POST" class="input__form")
                 div(class="input__div")
                   div(class="input__div__div") 
-                    input(type="text" name="account_name" class="input__text")
+                    label(class="input__label")
+                      span(class="input__span") 전화번호, 사용자 이름 또는 이메일
+                      input(type="text" name="account_name" class="input__text")
                 div(class="input__div")
                   div(class="input__div__div")  
-                    input(type="password" name="pwd" class="input__text") 
+                    label(class="input__label")
+                      span(class="input__span") 비밀번호
+                      input(type="password" name="pwd" class="input__text") 
                 input(type="submit" value="로그인" class="input__submit")
               div(class="textOr__div")
                 div(class="textOr__div__div")
