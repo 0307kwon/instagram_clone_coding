@@ -14,22 +14,22 @@ block content
             div(class="article__content__top__div__div")
               img(src="/static_images/logo_img.png" class="article__content__top__div__div__img")
             div(class="article__content__top__div__loginForm")
-              form(action="/", method="POST" class="input__form")
+              form(action="/login/signin", method="POST" class="input__form")
                 div(class="input__div")
                   div(class="input__div__div") 
-                    input(type="text" name="id" class="input__text")
+                    input(type="text" name="account_name" class="input__text")
                 div(class="input__div")
                   div(class="input__div__div")  
                     input(type="password" name="pwd" class="input__text") 
                 input(type="submit" value="로그인" class="input__submit")
-                div(class="textOr__div")
-                  div(class="textOr__div__div")
-                  div(class="textOr__div__text") 또는
-                  div(class="textOr__div__div")
-                div(class="facebook__div")
-                  button(class="facebook__div__button")
-                    img(src="/static_images/login/facebook.png" class="facebook__div__button__img")
-                    div(class="facebook__div__button__text") Facebook으로 로그인
+              div(class="textOr__div")
+                div(class="textOr__div__div")
+                div(class="textOr__div__text") 또는
+                div(class="textOr__div__div")
+              div(class="facebook__div")
+                button(class="facebook__div__button")
+                  img(src="/static_images/login/facebook.png" class="facebook__div__button__img")
+                  div(class="facebook__div__button__text") Facebook으로 로그인
               a(href="/" class="article__content__top__div__loginForm__a") 비밀번호를 잊으셨나요?
         div(class="article__content__bottom")
           div(class="article__content__bottom__div")

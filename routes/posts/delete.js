@@ -3,7 +3,7 @@ const router = express.Router();
 
 const fs = require("fs");
 const ReadByPostId = require("../../custom_module/readByPostId");
-const post_db = require("../../custom_module/post_db");
+const mongoDB = require("../../custom_module/mongoDB");
 
 router.get("/:post_id", ReadByPostId,(req,res)=>{
     const id = req.params.post_id;
@@ -14,7 +14,7 @@ router.get("/:post_id", ReadByPostId,(req,res)=>{
         <meta http-equiv="refresh" content="0; url=/"></meta>
     `;
     //db에서 삭제
-    post_db.Post.deleteOne({_id:id,},(err,post)=>{
+    mongoDB.Post.deleteOne({_id:id,},(err,post)=>{
         if(err) throw err;
     }).then((value)=>{
         if(post_readed.filename_image !== ""){ // image도 있으면 삭제

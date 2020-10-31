@@ -5,7 +5,7 @@ const multer = require("multer");
 const storage = require("../../custom_module/myMulterStorage");
 const upload = multer({storage:storage,});
 
-const post_db = require("../../custom_module/post_db");
+const mongoDB = require("../../custom_module/mongoDB");
 
 
 router.post("/process", upload.single("uploaded_file"),(req,res)=>{
@@ -16,7 +16,7 @@ router.post("/process", upload.single("uploaded_file"),(req,res)=>{
     if(req.file !== undefined){
         filename_image = req.file.filename;
     }
-    const newPost = new post_db.Post({
+    const newPost = new mongoDB.Post({
         account_name:account_name,
         contents:contents,
         filename_image:filename_image,

@@ -5,7 +5,7 @@ const multer = require("multer");
 const storage = require("../../custom_module/myMulterStorage");
 const upload = multer({storage:storage,});
 
-const post_db = require("../../custom_module/post_db"); 
+const mongoDB = require("../../custom_module/mongoDB"); 
 
 const ReadByPostId = require("../../custom_module/readByPostId");
 
@@ -25,7 +25,7 @@ router.post("/process/:post_id",ReadByPostId,upload.single("uploaded_file"),(req
     const post_id = req.params.post_id;
     //파일은 upload.single에 의해 알아서 저장됨
     //db 업데이트
-    post_db.Post.updateOne({_id:post_id,},req.post_changed,(err,post)=>{
+    mongoDB.Post.updateOne({_id:post_id,},req.post_changed,(err,post)=>{
         if(err) throw err;
         const page = `
         <script>alert("수정되었습니다.")</script>

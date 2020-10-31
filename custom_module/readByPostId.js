@@ -1,4 +1,4 @@
-const mydb = require("./post_db");
+const mydb = require("./mongoDB");
 
 function readByPostId(req,res,next){
     const id = req.params.post_id;

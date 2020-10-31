@@ -17,11 +17,21 @@ const PostSchema = mongoose.Schema({
 });
 const Post = mongoose.model("post",PostSchema);
 
-const post_db = {
+
+const UserSchema = mongoose.Schema({
+    email:String,
+    name:String,
+    account_name:String,
+    pwd:String,
+});
+const User = mongoose.model("user",UserSchema);
+
+const mongoDB = {
     Post:Post,
+    User:User,
 }
 
-module.exports = post_db;
+module.exports = mongoDB;
 
 
 
