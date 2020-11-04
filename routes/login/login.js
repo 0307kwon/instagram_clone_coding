@@ -31,10 +31,20 @@ router.post("/signin",(req,res)=>{
     const pwd = req.body.pwd;
     mongoDB.User.findOne({account_name:account_name},(err,user)=>{
         if(err) throw err;
-        if(user.pwd === pwd){
+        if(user === null){ // 아이디를 못찾았을 경우
+            const page = `
+            <script>alert("없는 아이디입니다.")</script>
+            <meta http-equiv="refresh" content="0; url=/"></meta>
+            `;
+            res.send(page);
+        }else if(user.pwd === pwd){ 
             res.redirect("/posts/list");
-        }else{
-            res.send("로그인 실패");
+        }else{ // 아이디는 맞았지만 비밀번호가 틀린 경우
+            const page = `
+            <script>alert("비밀번호가 일치하지 않습니다.")</script>
+            <meta http-equiv="refresh" content="0; url=/"></meta>
+            `;
+            res.send(page);
         }
     })
 });
