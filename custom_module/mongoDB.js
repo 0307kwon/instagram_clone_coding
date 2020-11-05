@@ -23,12 +23,14 @@ const UserSchema = mongoose.Schema({
     name:String,
     account_name:String,
     pwd:String,
+    salt:String,
 });
 const User = mongoose.model("user",UserSchema);
 
 const mongoDB = {
     Post:Post,
     User:User,
+    mongoose:mongoose,
 }
 
 module.exports = mongoDB;

@@ -6,13 +6,13 @@ block additional_css
 block content
     form(action="/login/signup/process" method="POST")
         div
-            input(type="text" name="email")
+            input(type="text" placeholder="email" name="email")
         div
-            input(type="text" name="name")
+            input(type="text" placeholder="실명" name="name")
         div
-            input(type="text" name="account_name")
+            input(type="text" placeholder="아이디" name="account_name")
         div
-            input(type="password" name="pwd")
+            input(type="password" placeholder="비밀번호" name="pwd")
         div
             input(type="submit")
     

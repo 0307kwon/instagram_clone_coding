@@ -8,12 +8,25 @@ var indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login/login');
 var usersRouter = require('./routes/users');
 const postsRouter = require('./routes/posts/posts');
+const mongoDB = require("./custom_module/mongoDB");
 
 var app = express();
+//세션 db
+const session = require("express-session");
+const MongoStore = require("connect-mongoose-only")(session);
+const { mongoose } = require('./custom_module/mongoDB');
+//
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+app.use(session({
+  secret: "dskvnD!@#@!$$^($**T12#$#!@",
+  resave: false,
+  saveUninitialized: true,
+  store:new MongoStore({mongooseConnection:mongoDB.mongoose.connection}),
+}));
 
 app.use(logger('dev'));
 app.use(express.json());
