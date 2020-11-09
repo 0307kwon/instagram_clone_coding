@@ -77,7 +77,7 @@ mongoose+session 기능을 조합하여 만듦
 
 
 
-# 프로젝트 진행 상황
+# 4. 프로젝트 진행 상황
 
 <details>
 <summary>[2020.10.05] 게시판 기능 (사진 + 글) </summary>
