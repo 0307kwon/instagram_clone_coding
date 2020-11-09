@@ -83,7 +83,7 @@ mongoose+session 기능을 조합하여 만듦
 <summary>[2020.10.05] 게시판 기능 (사진 + 글) </summary>
        
        
-![](./readme_images/image01.png)
+<img src="./readme_images/image01.png" width=500px>
 
 - mongoDB에 접속하는 비밀번호가 소스코드에 그대로 공개되어 있음
 
