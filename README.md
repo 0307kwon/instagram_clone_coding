@@ -9,6 +9,19 @@
 
 https://www.notion.so/Node-js-Instagram-4b0218d19b4c44b8ae73e48d52f59aa8
 
+# 2. 사용된 기술
+
+NodeJS(express)
+
+ES6
+
+MongoDB
+
+pbkdf2(password)
+
+session
+
+multer
 
 
 # 프로젝트 진행 상황
