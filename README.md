@@ -63,6 +63,18 @@ multer
     
 </details>
 
+<details>
+<summary>로그인 기능</summary>
+       
+mongoose+session 기능을 조합하여 만듦 
+
+[https://www.npmjs.com/package/connect-mongoose-only](https://www.npmjs.com/package/connect-mongoose-only) 
+
+이 패키지를 참고. (몽구스에 세션을 저장하는데 편리하게 만들어져 있음)
+
+</details>
+
+
 
 # 프로젝트 진행 상황
 
