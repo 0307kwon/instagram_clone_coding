@@ -66,6 +66,7 @@ multer
 <details>
 <summary>로그인 기능</summary>
        
+       
 mongoose+session 기능을 조합하여 만듦 
 
 [https://www.npmjs.com/package/connect-mongoose-only](https://www.npmjs.com/package/connect-mongoose-only) 
@@ -77,6 +78,22 @@ mongoose+session 기능을 조합하여 만듦
 
 
 # 프로젝트 진행 상황
+
+<details>
+<summary>[2020.10.05] 게시판 기능 (사진 + 글) </summary>
+       
+       
+![](./readme_images/image01.png)
+
+- mongoDB에 접속하는 비밀번호가 소스코드에 그대로 공개되어 있음
+
+    ⇒ 비밀번호를 저장하는 설정파일을 따로 만들어 github에 올릴때는 그것만 빼고 올리도록 해야됨 
+
+    ([https://poiemaweb.com/mongoose](https://poiemaweb.com/mongoose) 참고)
+
+- 글 작성시 script태그를 막아두지 않았음 (보안이슈)
+
+</details>
 
 <details>
 <summary>[2020.11.05]</summary>
