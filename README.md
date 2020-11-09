@@ -1,5 +1,16 @@
 # instagram_clone_coding
-인스타그램 클론코딩 프로젝트
+
+
+# 1. 개요
+
+인스타그램과 외관과 기능이 똑같은 웹페이지를 만드는 것이 목표입니다.
+
+아래 url로 들어가시면 좀 더 많은 정보를 보실 수 있습니다.
+
+https://www.notion.so/Node-js-Instagram-4b0218d19b4c44b8ae73e48d52f59aa8
+
+
+
 # 프로젝트 진행 상황
 
 <details>
