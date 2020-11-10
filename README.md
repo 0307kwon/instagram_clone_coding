@@ -90,22 +90,24 @@ mongoose+session 기능을 조합하여 만듦
 </details>
 
 <details>
-<summary>[2020.10.14] 로그인 화면 완성 </summary>
+<summary>[2020.10.14] 로그인 완성 </summary>
        
        
 <img src="./readme_images/image02.png" width=500px>
+
+- mongoose+session 기능을 조합하여 만듦 
 
 - 지속적인 css 작업중.
 
 </details>
 
 <details>
-<summary>[2020.11.05]</summary>
+<summary>[2020.11.05]세션 기능 추가, 패스워드 암호화</summary>
 
 
-1. 로그인
+1. 세션 기능 추가
 
-    mongoose+session 기능을 조합하여 만듦 
+    이제 로그아웃을 하지 않으면 로그인 상태가 계속 유지됩니다.
     
     <img src="/readme_images/2020.11.05.gif" width=500px >
 
