@@ -66,6 +66,7 @@ multer
 <details>
 <summary>로그인 기능</summary>
        
+       
 mongoose+session 기능을 조합하여 만듦 
 
 [https://www.npmjs.com/package/connect-mongoose-only](https://www.npmjs.com/package/connect-mongoose-only) 
@@ -76,13 +77,51 @@ mongoose+session 기능을 조합하여 만듦
 
 
 
-# 프로젝트 진행 상황
+# 4. 프로젝트 진행 상황
 
 <details>
-<summary>[2020.11.05]</summary>
-<p>1. 로그인 기능 구현</p>
-<p>2. 비밀번호 암호화 ( pbkdf2 사용 )</p>
-<p>3. 세션기능 완성</p>
-<img src="/readme_images/2020.11.05.gif" width=500px >
+<summary>[2020.10.05] 게시판 기능 (사진 + 글) </summary>
+       
+       
+<img src="./readme_images/image01.png" width=500px>
+
+- 글 작성시 script태그를 막아두지 않았음 (보안이슈)
+
+</details>
+
+<details>
+<summary>[2020.10.14] 로그인 완성 </summary>
+       
+       
+<img src="./readme_images/image02.png" width=500px>
+
+- mongoose+session 기능을 조합하여 만듦 
+
+- 지속적인 css 작업중.
+
+</details>
+
+<details>
+<summary>[2020.11.05]세션 기능 추가, 패스워드 암호화</summary>
+
+
+1. 세션 기능 추가
+
+    이제 로그아웃을 하지 않으면 로그인 상태가 계속 유지됩니다.
+    
+    <img src="/readme_images/2020.11.05.gif" width=500px >
+
+2. 패스워드 암호화
+
+    pbkdf2-password 패키지를 사용하여 구현
+
+    - pbkdf2-password
+        - hasher() : 비밀번호를 salt에 맞게 암호화하는 함수
+
+            salt가 없을 시 salt를 자동으로 만들어 암호화한다.
+
+    <img src="/readme_images/image03.png" width=500px >
+
+
 </details>
 
